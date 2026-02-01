@@ -1,4 +1,4 @@
-package com.orderservice.orderservice.order;
+package com.orderservice.orderservice.order.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

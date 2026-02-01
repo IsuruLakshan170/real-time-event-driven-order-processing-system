@@ -3,27 +3,21 @@ services:
     image: confluentinc/cp-zookeeper:7.5.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-    ports:
-      - "2181:2181"
+    ports: ["2181:2181"]
 
   kafka:
     image: confluentinc/cp-kafka:7.5.0
-    depends_on:
-      - zookeeper
+    depends_on: [zookeeper]
     ports:
-      - "9092:9092"  # for other containers on the Docker network
-      - "9093:9093"  # for your Windows host apps (Spring Boot from IDE)
+      - "9092:9092"   # container network
+      - "9093:9093"   # host access (Windows/IDE)
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-
-      # Two listeners: one for containers, one for host
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-
-      # Single-broker dev defaults (prevent replication errors)
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
@@ -36,6 +30,6 @@ services:
       POSTGRES_USER: orderflow
       POSTGRES_PASSWORD: password
     ports:
-      - "5433:5432"  # <-- change host port to 5433 if 5432 is busy on your PC
+      - "5433:5432"
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql

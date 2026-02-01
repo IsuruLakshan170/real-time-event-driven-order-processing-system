@@ -1,0 +1,5 @@
+{
+  "azure-password-01000": "plaintext-credential-to-azure-keyvault",
+  "azure-database-postgresql-02000": "mi-postgresql-spring",
+  "localhost-00004": "bare/local-resource-access"
+}

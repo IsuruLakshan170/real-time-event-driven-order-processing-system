@@ -1,0 +1,119 @@
+############################################
+# GLOBAL IGNORE FOR ORDER-FLOW PROJECT
+############################################
+
+# -----------------------
+# Maven
+# -----------------------
+target/
+.mvn/wrapper/maven-wrapper.jar
+**/target/
+**/build/
+
+# Don't ignore target inside src folders
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven local settings
+.settings.xml
+
+# -----------------------
+# Spring Boot
+# -----------------------
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+
+# Ignore generated Spring Boot files
+*.pid
+*.pid.lock
+
+# -----------------------
+# IntelliJ IDEA
+# -----------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# -----------------------
+# VS Code
+# -----------------------
+.vscode/
+
+# -----------------------
+# Eclipse / STS / NetBeans
+# -----------------------
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# -----------------------
+# OS / Temporary Files
+# -----------------------
+.DS_Store
+Thumbs.db
+*.class
+*.jar
+*.war
+*.ear
+
+# -----------------------
+# Docker / Compose
+# -----------------------
+# Local container storage
+docker-data/
+docker-volume/
+tmp/
+
+# Environment / sensitive files
+.env
+.env.*
+*.local
+
+# -----------------------
+# Python services (inventory, notification)
+# -----------------------
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+.envrc/
+.venv/
+
+# -----------------------
+# Logs / output
+# -----------------------
+*.log
+*.out
+*.err
+
+# -----------------------
+# Node / Frontend (if added later)
+# -----------------------
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+############################################
+# END
+############################################

@@ -1,6 +1,8 @@
 
 OrderFlow — Current Completed Project (Status Doc)
 
+<img width="1972" height="1194" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/31925374-f8f7-4ac7-9bf0-686fd534cecc" />
+
 1) Tech Stack (implemented)
 - Order Service — Java 21, Spring Boot 4.0.2
 - Payment Service — Java 21, Spring Boot 4.0.2

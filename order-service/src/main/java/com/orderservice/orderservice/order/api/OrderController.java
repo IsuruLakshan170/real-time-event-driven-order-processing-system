@@ -1,5 +1,6 @@
 package com.orderservice.orderservice.order.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.orderservice.orderservice.order.api.dto.CreateOrderRequest;
 import com.orderservice.orderservice.order.api.dto.CreateOrderResponse;
 import com.orderservice.orderservice.order.domain.model.OrderEntity;
@@ -16,11 +17,14 @@ public class OrderController {
 
     private final OrderService orderService;
     private final OrderEventsProducer producer;
+    private final ObjectMapper objectMapper;
 
-    public OrderController(OrderService orderService, OrderEventsProducer producer) {
+    public OrderController(OrderService orderService, OrderEventsProducer producer, ObjectMapper objectMapper) {
         this.orderService = orderService;
         this.producer = producer;
+        this.objectMapper = objectMapper;
     }
+
 
     @PostMapping
     public ResponseEntity<CreateOrderResponse> create(@RequestBody CreateOrderRequest req) {

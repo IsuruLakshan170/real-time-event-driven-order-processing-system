@@ -1,6 +1,5 @@
 package com.orderservice.orderservice.order.api;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.orderservice.orderservice.order.api.dto.CreateOrderRequest;
 import com.orderservice.orderservice.order.api.dto.CreateOrderResponse;
 import com.orderservice.orderservice.order.domain.model.OrderEntity;
@@ -8,6 +7,7 @@ import com.orderservice.orderservice.order.domain.service.OrderService;
 import com.orderservice.orderservice.order.infra.kafka.OrderEventsProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.UUID;
 

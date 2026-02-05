@@ -455,6 +455,4 @@ Create a new service, subscribe to the relevant topic (e.g., `order.events`), an
 
 ---
 
-## 📜 License
 
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.

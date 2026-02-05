@@ -9,8 +9,6 @@
 
 A production‑minded, event‑driven microservices system that processes orders in **real time**. It demonstrates **asynchronous workflows**, **loose coupling**, **effectively-once semantics**, **observability**, and **failure isolation** using a streaming backbone.
 
-> Built to showcase practical system design for interviews, portfolios, and as a solid foundation for real projects.
-
 ---
 
 ## 🧭 Table of Contents

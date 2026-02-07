@@ -429,28 +429,5 @@ See `.github/workflows/` if included; adjust registry credentials in repo secret
 
 ---
 
-## 🗓️ Roadmap
-
-- [ ] Add **search** (Elasticsearch) for orders
-- [ ] **Kubernetes** manifests + Helm chart
-- [ ] **Rate limiting** (API Gateway)
-- [ ] **Payment provider sandbox** integration
-- [ ] **Canary** + automated rollback
-- [ ] **Blue/Green** database migrations (Liquibase/Flyway)
-
----
-
-## ❓ FAQ
-
-**Why event‑driven instead of synchronous orchestration?**  
-Resilience, independent scaling, and extensibility. If one service is down, others keep working and messages retry later.
-
-**What about exactly‑once?**  
-We approximate using idempotent producers, deduping consumers, and transactional outbox. True global exactly‑once across multiple systems is non‑trivial; we aim for **effectively once**.
-
-**How do I add a new subscriber (e.g., analytics)?**  
-Create a new service, subscribe to the relevant topic (e.g., `order.events`), and handle events without changing existing producers.
-
----
 
 
